@@ -5,11 +5,11 @@ interface TransactionSchema {
 
   value: number;
 
-  type: 'income' | 'outcome';
+  type: "income" | "outcome";
 
-  createdAt: Date
+  createdAt: Date;
 
-  updateAt: Date
+  updateAt: Date;
 }
 
 const Transaction = database.collection<TransactionSchema>("transactions");

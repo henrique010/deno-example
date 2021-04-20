@@ -1,7 +1,7 @@
 interface CreateTransactionDTO {
-    value: number;
-    title: string;
-    type: 'income' | 'outcome';
+  value: number;
+  title: string;
+  type: "income" | "outcome";
 }
 
-export type { CreateTransactionDTO }
+export type { CreateTransactionDTO };

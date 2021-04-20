@@ -4,9 +4,9 @@ import BalanceController from "../controllers/BalanceController.ts";
 
 const router = new Router();
 
-router.get('/api/transactions', TransactionController.index);
-router.post('/api/transactions', TransactionController.create);
+router.get("/api/transactions", TransactionController.index);
+router.post("/api/transactions", TransactionController.create);
 
-router.get('/api/balances', BalanceController.show);
+router.get("/api/balances", BalanceController.show);
 
 export { router };

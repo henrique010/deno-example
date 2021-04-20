@@ -6,4 +6,4 @@ await client.connect("mongodb://localhost:27017");
 
 const database = client.database("deno-test");
 
-export { database }
+export { database };
