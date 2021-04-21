@@ -1,6 +1,6 @@
 import { Application } from "https://deno.land/x/oak/mod.ts";
 import { config } from "https://deno.land/x/dotenv/mod.ts";
-import { router } from "./routes/routes.js";
+import { router } from "./routes/routes.ts";
 
 const host = config().HOST || "127.0.0.1";
 const port = config().PORT || "3333";
