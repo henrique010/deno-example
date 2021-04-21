@@ -25,7 +25,7 @@ class TransactionsRepository {
   }
 
   public async getBalance(): Promise<Balance> {
-    const [income, outcome]: any[] = await Transaction.aggregate([
+    const [input, output]: any[] = await Transaction.aggregate([
       { $match: { $or: [{ type: "income" }, { type: "outcome" }] } },
       {
         $group: {
@@ -36,12 +36,15 @@ class TransactionsRepository {
       },
     ]).toArray();
 
-    const total = income.total - outcome.total;
+    const income = input?.total || 0
+    const outcome = output?.total || 0
+
+    const total = income - outcome;
 
     return {
       total,
-      income: income.total,
-      outcome: outcome.total,
+      income,
+      outcome,
     };
   }
 }
