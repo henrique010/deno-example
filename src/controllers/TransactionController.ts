@@ -11,6 +11,7 @@ class TransactionController {
 
       response.status = 200;
       response.body = { transactions };
+
     } catch (err) {
       response.status = err.status || 500;
       response.body = {
@@ -37,15 +38,11 @@ class TransactionController {
 
       response.status = 200;
       response.body = { transactionId };
-
-      return response;
     } catch (err) {
       response.status = err.status || 500;
       response.body = {
         message: err.message || "Internal Server Error",
       };
-
-      return response;
     }
   }
 }
